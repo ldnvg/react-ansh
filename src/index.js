@@ -1,9 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import  anechka from './anechka.jpg'
-import  black from './black.png'
-
 
 function Square(props) {
     return (
@@ -67,7 +64,7 @@ class Game extends React.Component {
       if (calculateWinner(squares) || squares[i]) {
         return;
       }
-      squares[i] = this.state.xIsNext ? <img src={anechka} /> : <img src={black} /> ;
+      squares[i] = this.state.xIsNext ? 'X' : '0';
       this.setState({
         history: history.concat([{
           squares: squares
@@ -85,7 +82,7 @@ class Game extends React.Component {
       if (winner) {
         status = 'Winner: ' + winner;
       } else {
-        status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+        status = 'Next player: ' + (this.state.xIsNext ? 'X' : '0');
       }
   
       return (
